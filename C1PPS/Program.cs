@@ -6,7 +6,7 @@
         {
             Console.WriteLine(IsValidPPSN("5212253G"));//true
             Console.WriteLine(IsValidPPSN("1234567A"));//false
-            Console.WriteLine(IsValidPPSN("1234567T"));
+            Console.WriteLine(IsValidPPSN("1234567T"));//true
             Console.WriteLine(IsValidPPSN("1234567"));//false
             Console.WriteLine(IsValidPPSN("123456A7"));//false
             Console.WriteLine(IsValidPPSN("123456AT"));//false
