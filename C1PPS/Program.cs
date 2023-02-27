@@ -4,10 +4,16 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine(IsAPPSN("1234567TW"));
+            Console.WriteLine(IsValidPPSN("5212253G"));//true
+            Console.WriteLine(IsValidPPSN("1234567A"));//false
+            Console.WriteLine(IsValidPPSN("1234567T"));
+            Console.WriteLine(IsValidPPSN("1234567"));//false
+            Console.WriteLine(IsValidPPSN("123456A7"));//false
+            Console.WriteLine(IsValidPPSN("123456AT"));//false
+            Console.WriteLine(IsValidPPSN("123456A"));//false
         }
 
-        static bool IsAPPSN(string pps)
+        static bool IsValidPPSN(string pps)
         {
             string alphabet = "abcdefghijklmnopqrstuvwxyz";
             alphabet= alphabet.ToUpper();
@@ -15,6 +21,7 @@
             if ((pps.Length == 8) || (pps.Length == 9))
             {
                 int checkSum = SumWeightedValues(pps);
+
 
                 if ((pps.Length == 9) && (pps[8] != 'W') && (pps[8] != ' '))
                 {
@@ -42,7 +49,8 @@
            for (int i = 0; i <= 6; i++)
             {
                 int num = (int)Char.GetNumericValue(pps[i]);
-                checkSum += num * weighting;              
+                checkSum += num * weighting;       
+                
                 weighting--;
             }
 
