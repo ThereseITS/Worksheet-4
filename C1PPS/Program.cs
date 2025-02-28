@@ -12,7 +12,7 @@ namespace C1PPS
        
         static void Main(string[] args)
         {
-            Console.WriteLine(IsValidPPSN("3111350W "));//true
+            
             Console.WriteLine(IsValidPPSN("1234567A"));//false
             Console.WriteLine(IsValidPPSN("1234567t"));//true
             Console.WriteLine(IsValidPPSN("1234567"));//false
