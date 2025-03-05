@@ -1,4 +1,8 @@
 ﻿using System.Diagnostics.CodeAnalysis;
+/*Program name: Worksheet 4 Part 2 q6-8 : 
+  Author      : Therese Hume
+  Date        : Updated Feb 2025
+  Purpose     : Learning about strings */
 
 namespace Q6To8
 {
@@ -16,19 +20,23 @@ namespace Q6To8
 
             Console.WriteLine(text);
             Console.WriteLine(RemoveChars(text,chars));
-            Console.WriteLine(RemoveChars2(text, chars));
-            Console.WriteLine(RemoveChars3(text, chars));
+            Console.WriteLine(RemoveChars2(text,chars));
+            Console.WriteLine(RemoveChars3(text,chars));
             
             
             PrintEveryThirdCharJ(text);
+
             text = "xy,xy,xy,xy,xy,x,ppp";
-  
+   
             foreach (string s in text.Split(',')) 
             { 
                 Console.WriteLine(s);
             }
 
+            Console.WriteLine($"The number of x and ys {CountXYs(text)}");
+
             string[] words = "the sun and the moon and the stars ".Split(" ");
+           
             foreach (string s in words)
             {
                 Console.WriteLine(s);
@@ -142,13 +150,21 @@ namespace Q6To8
         static void PrintEveryThirdCharJ(string s)
         {
             int counter = 1;
-            foreach (char c in s) { if (counter % 3 == 0) Console.WriteLine(c); counter++; }
+
+            foreach (char c in s) 
+            { 
+                if (counter % 3 == 0) 
+                    Console.WriteLine(c); 
+                counter++; 
+            }
         }
-        static int NoticeXY(string s)
+        static int CountXYs(string s)
         {
             int xy = 0;
 
-            foreach (char c in s) if (c == 'x' || c == 'y') xy++;
+            foreach (char c in s) 
+                if (c == 'x' || c == 'y') 
+                    xy++;
             return xy;
         }
         /// <summary>
